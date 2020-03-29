@@ -7,41 +7,73 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<!-- <link rel="stylesheet" type="text/css" href='http://fonts.googleapis.com/earlyaccess/nanumgothic.css'> -->
 		<link rel="stylesheet" type="text/css" href="./css/style.css">
-		<script type="text/javascript" defer src="./js/jquery-1.7.1.min.js"></script>
-		<script type="text/javascript" defer src="./js/move.js"></script>
+		<script type="text/javascript" src="./js/jquery-1.7.1.min.js"></script>
+		<!--<script type="text/javascript" defer src="./js/move.js"></script>-->
 	</head>
 
 	<body>
-		<section>
-			<article>
+		<div class = "section">
+			<div class = "article">
 				<div id="slide-wrap" class="slide-wrap">
-                       <div class="slide_01" data-index="1">
-
+                       <div class="slide slide_01" data-index="1">
+                            <img src="./images/slide/banner1.png" alt="1">
                        </div>
-                       <div class="slide_02" data-index="2">
-
+                       <div class="slide slide_02" data-index="2">
+                            <img src="./images/slide/banner2.png" alt="2">
                        </div>
-                       <div class="slide_03" data-index="3">
-
+                       <div class="slide slide_03" data-index="3">
+                            <img src="./images/slide/banner3.png" alt="3">
                        </div>
-                       <div class="slide_04" data-index="4">
-
-                       </div>
-                       <div class="slide_05" data-index="5">
-
-                       </div>
-                       <div class="slide_06" data-index="6">
-
-                       </div>
-                       <div class="slide_07" data-index="7">
-
-                       </div>
-                       <div class="slide_08" data-index="8">
-                           
+                       <div class="slide slide_04" data-index="4">
+                            <img src="./images/slide/banner4.png" alt="4">
                        </div>
                     </div>
                 </div>
-			</article>
-		</section>
+			</div>
+        </div>
+        <script type="text/javascript" defer>
+            $(function(){
+                var slide_height;
+                var speed = 2000;
+                var fade_speed = speed/10;
+                $(window).load(function(){
+                    function lazy_0(){
+                        if($('.slide-wrap').height()==0||$('.slide-wrap').height()==null){
+                            $(document).ready(function(){
+                                slide_height = $('.slide').children('img').height();
+                                    $('.slide-wrap').css({'height':slide_height});
+                                }
+                            );
+                        };
+                    };
+                    if($('.slide-wrap').height()==0||$('.slide-wrap').height()==null){
+                        setInterval(lazy_0,0);
+                    };
+                });
+                
+                function movement(){
+                    var data_idx = 1;
+                    var slide_leng = $('.slide').length;
+                    //$('.slide_01').addClass('first');
+                    //$('.slide_0'+slide_leng).fadeOut(fade_speed);
+                    $('.slide_01').addClass('first');
+                    next_slide = setInterval(function(){
+                        if (data_idx>=slide_leng) {
+                            $('.slide_0'+data_idx).fadeOut(fade_speed);
+                            data_idx = 1;
+                            $('.slide_0'+data_idx).fadeIn(fade_speed);
+                        } else {
+                            $('.slide_01').removeClass('first');
+                            $('.slide_0'+data_idx).fadeOut(fade_speed);
+                            console.log(data_idx);
+                            data_idx++;
+                            console.log(data_idx);
+                            $('.slide_0'+data_idx).fadeIn(fade_speed);
+                        }
+                    },speed);
+                };
+                movement();
+            });
+        </script>
 	</body>
 </html>

@@ -8,8 +8,8 @@
 } */
 
 body{width:100%;height:100%;margin:0;padding:0;background:#fff; font-family:NanumGothic,Gothic,고딕;overflow:auto;}
-section{padding:0;margin:0;border:0;display:block;position:relative;overflow:hidden;}
-article{padding:0;margin:0;border:0;display:block;position:relative;overflow:hidden;}
+.section{padding:0;margin:0;border:0;display:block;position:relative;overflow:hidden;}
+.article{padding:0;margin:0;border:0;display:block;position:relative;overflow:hidden;}
 nav{padding:0;margin:0;border:0;display:block;position:relative;overflow:hidden;}
 div{box-sizing:border-box;margin:0;display:block;position:relative;overflow:hidden;}
 ul{position:relative;margin:0;padding:0;margin:0;border:0;list-style:none;display:block;}
@@ -31,18 +31,19 @@ input[type=checkbox]:checked+label:before{content:"\2713";font-size:14px;font-we
 input[type=text]{box-sizing:border-box;}
 input[type=select]{appearance:none;-moz-appearance:none;-webkit-appearance:none;}
 
-section article{width:60%;background:#fff;margin:0 auto;}
-section article .slide-wrap{width:100%;border:1px solid #000;position:relative;}
-section article .slide-wrap .slide-container{width:100%;overflow:visible;display:block;}
-section article .slide-wrap .slide-container .slide{width:100%;position:absolute;z-index:1;top:0;display:block;box-sizing:border-box;margin:0;padding:0;}
-section article .slide-wrap .slide-container .slide img{width:100%;display:block;position:relative;}
+.section .article{width:60%;background:#fff;margin:0 auto;}
+.section .article .slide-wrap{width:100%;border:1px solid #000;position:relative;}
+.section .article .slide-wrap .slide{width:100%;position:absolute;z-index:1;top:0;display:block;box-sizing:border-box;margin:0;padding:0;display:none;}
+.section .article .slide-wrap .slide img{width:100%;display:block;position:relative;}
 
-section article .slide-wrap .indicator{display:table;background:rgba(0,0,0,0);position:absolute;bottom:5%;margin-left:50%;z-index:2;}
-section article .slide-wrap .indicator .bulet{display:table-cell;box-sizing:border-box;color:#ccc;vertical-align:middle;text-align:center;cursor:pointer;}
+.first{display:block!important;}
 
-section article .slide-wrap .con-btn{width:7%;height:100%;position:absolute;z-index:2;top:0px;cursor:pointer;}
-section article .slide-wrap #prev-btn{left:0px;background:rgba(0,0,0,0) url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23202020'%2F%3E%3C%2Fsvg%3E") no-repeat center;}
-section article .slide-wrap #next-btn{right:0px;background:rgba(0,0,0,0) url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23202020'%2F%3E%3C%2Fsvg%3E") no-repeat center;}
+.section .article .slide-wrap .indicator{display:table;background:rgba(0,0,0,0);position:absolute;bottom:5%;margin-left:50%;z-index:2;}
+.section .article .slide-wrap .indicator .bulet{display:table-cell;box-sizing:border-box;color:#ccc;vertical-align:middle;text-align:center;cursor:pointer;}
+
+.section .article .slide-wrap .con-btn{width:7%;height:100%;position:absolute;z-index:2;top:0px;cursor:pointer;}
+.section .article .slide-wrap #prev-btn{left:0px;background:rgba(0,0,0,0) url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23202020'%2F%3E%3C%2Fsvg%3E") no-repeat center;}
+.section .article .slide-wrap #next-btn{right:0px;background:rgba(0,0,0,0) url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23202020'%2F%3E%3C%2Fsvg%3E") no-repeat center;}
 
 @media all and (max-width:320px){
 	.indicator{width:50%;height:15%;left:-25%;font-size:0.5em;line-height:0.5em;}
